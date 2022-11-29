@@ -1,22 +1,29 @@
 import "package:flutter/material.dart";
+import "./profile_screen.dart";
+import "./coding_equipments_screen.dart";
 import "./home_screen.dart";
+import "./group_screen.dart";
 
+// ignore: use_key_in_widget_constructors
 class TabsScreen extends StatefulWidget {
   @override
   State<TabsScreen> createState() => _TabsScreenState();
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  List<Map<String, Object>> _pages;
+  List<Object> _pages;
 
-  int _selectedPageIndex = 0;
+  int _selectedPageIndex;
 
   @override
   void initState() {
     super.initState();
+    _selectedPageIndex = 0;
     _pages = [
-      {"page": HomeScreen(), "title": "Categories"},
-      // {"page": , "title": "Your Favorite"},
+      HomeScreen(),
+      CodingEquipmentsScreen(),
+      GroupScreen(),
+      ProfileScreen(),
     ];
   }
 
@@ -56,62 +63,44 @@ class _TabsScreenState extends State<TabsScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         elevation: 0,
+        type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white10,
-        unselectedItemColor: null,
-        selectedItemColor: null,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         currentIndex: 0,
+        // ignore: prefer_const_literals_to_create_immutables
         items: [
           BottomNavigationBarItem(
-            icon: IconTheme(
-              child: ImageIcon(
-                AssetImage("assets/icons/home.png"),
-              ),
-              data: IconThemeData(
-                color: null,
-              ),
+            icon: Transform.scale(
+              scale: 1,
+              child: Image.asset("assets/icons/home.png"),
             ),
-            title: Text("Home"),
+            label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(
-              AssetImage("assets/icons/home.png"),
+            icon: Transform.scale(
+              scale: 1,
+              child: Image.asset("assets/icons/work.png"),
             ),
-            title: Text("Home"),
+            label: "Work",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/home.png")),
-            title: Text("Home"),
+            icon: Transform.scale(
+              scale: 1,
+              child: Image.asset("assets/icons/group.png"),
+            ),
+            label: "Group",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/home.png")),
-            title: Text("Home"),
+            icon: Transform.scale(
+              scale: 1,
+              child: Image.asset("assets/icons/profile.png"),
+            ),
+            label: "Profile",
           ),
-          // BottomNavigationBarItem(
-          //   icon: Transform.scale(
-          //     scale: 0.5,
-          //     child: Image.asset("assets/icons/work.png"),
-          //   ),
-          //   title: Text("Work"),
-          // ),
-          // BottomNavigationBarItem(
-          //   icon: Transform.scale(
-          //     scale: 0.5,
-          //     child: Image.asset("assets/icons/group.png"),
-          //   ),
-          //   title: Text("Group"),
-          // ),
-          // BottomNavigationBarItem(
-          //   icon: Transform.scale(
-          //     scale: 0.5,
-          //     child: Image.asset("assets/icons/profile.png"),
-          //   ),
-          //   title: Text("Profile"),
-          // ),
         ],
       ),
-      body: _pages[_selectedPageIndex]["page"],
+      body: _pages[_selectedPageIndex],
     );
   }
 }
