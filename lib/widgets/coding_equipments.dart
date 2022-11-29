@@ -14,7 +14,8 @@ class CodingEquipments extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 40, right: 40),
-      child: GestureDetector(
+      child: InkWell(
+        onTap: () {},
         child: ListTile(
           tileColor: Color.fromRGBO(red, green, blue, 1),
           title: Text(

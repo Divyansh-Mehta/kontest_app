@@ -65,9 +65,9 @@ class _TabsScreenState extends State<TabsScreen> {
         elevation: 0,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white10,
-        showSelectedLabels: false,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
-        currentIndex: 0,
+        currentIndex: _selectedPageIndex,
         // ignore: prefer_const_literals_to_create_immutables
         items: [
           BottomNavigationBarItem(

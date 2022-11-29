@@ -68,6 +68,7 @@ flutter:
     - assets/images/leetcode.png
     - assets/images/codeforces.png
     - assets/images/codechef.png
+    - assets/images/spoj.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

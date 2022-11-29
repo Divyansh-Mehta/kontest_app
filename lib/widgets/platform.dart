@@ -38,7 +38,12 @@ class Platform extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[Text(ptName, style: TextStyle(fontWeight: FontWeight.w500),)],
+                children: <Widget>[
+                  Text(
+                    ptName,
+                    style: const TextStyle(fontWeight: FontWeight.w500),
+                  )
+                ],
               ),
             )
           ],
