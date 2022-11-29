@@ -65,6 +65,9 @@ flutter:
     - assets/icons/work.png
     - assets/icons/group.png
     - assets/icons/profile.png
+    - assets/images/leetcode.png
+    - assets/images/codeforces.png
+    - assets/images/codechef.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -81,6 +84,18 @@ flutter:
     - family: PasseroOne
       fonts:
         - asset: assets/fonts/PasseroOne-Regular.ttf
+          weight: 400
+    - family: Neuton
+      fonts:
+        - asset: assets/fonts/Neuton-Regular.ttf
+          weight: 400
+    - family: Freehand
+      fonts:
+        - asset: assets/fonts/Freehand-Regular.ttf
+          weight: 400
+    - family: B612
+      fonts:
+        - asset: assets/fonts/B612-Regular.ttf
           weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
