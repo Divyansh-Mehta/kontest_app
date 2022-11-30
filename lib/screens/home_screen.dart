@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   // ignore: prefer_const_constructors
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: null,
                     child: const Text(
                       "See All >",
                       style: TextStyle(
@@ -104,24 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Platform("Leetcode", "assets/images/leetcode.png"),
                     Platform("Codechef", "assets/images/codechef.png"),
                     Platform("Codeforces", "assets/images/codeforces.png"),
-                    Platform("spoj", "assets/images/spoj.jpg"),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0, top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  // ignore: prefer_const_literals_to_create_immutables
-                  children: [
-                    const Text(
-                      "Live Contests",
-                      style: TextStyle(
-                        color: Color.fromRGBO(167, 20, 20, 1),
-                        fontSize: 20,
-                        fontFamily: "B612",
-                      ),
-                    ),
+                    Platform("spoj", ""),
                   ],
                 ),
               )
