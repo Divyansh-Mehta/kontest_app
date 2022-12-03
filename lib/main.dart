@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:kontest_app/screens/auth_screen.dart';
 import "screens/tabs_screen.dart";
 // import "screens/main_screen.dart";
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
           color: Colors.white10,
         ),
       ),
-      home: TabsScreen(),
+      home: AuthScreen(),
     );
   }
 }
