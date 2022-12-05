@@ -100,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Platform("Leetcode", "assets/images/leetcode.png"),
                     Platform("Codechef", "assets/images/codechef.png"),
