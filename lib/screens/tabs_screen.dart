@@ -36,7 +36,7 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:(_selectedPageIndex == 0||_selectedPageIndex == 1||_selectedPageIndex == 2) ?AppBar(
         title: const Text(
           "Kontest",
           style: TextStyle(
@@ -59,7 +59,21 @@ class _TabsScreenState extends State<TabsScreen> {
             ),
           )
         ],
-      ),
+      ):AppBar(backgroundColor: const Color.fromRGBO(160, 153, 238, 1),
+      title: const Text(
+          "Kontest",
+          style: TextStyle(
+            fontFamily: "PasseroOne",
+            fontSize: 30,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        elevation: 0,
+        leading: const ImageIcon(
+          AssetImage("assets/icons/trophy.png"),
+          color: Color.fromRGBO(242, 157, 56, 50),
+        ),
+        ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         elevation: 0,

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:kontest_app/screens/profile_screen.dart';
 import "screens/tabs_screen.dart";
 // import "screens/main_screen.dart";
 
@@ -16,7 +17,13 @@ class MyApp extends StatelessWidget {
           color: Colors.white10,
         ),
       ),
-      home: TabsScreen(),
+      initialRoute: '/',
+      routes: {
+          '/':(context) => TabsScreen(),
+          
+          '/profilescreen':(context) => ProfileScreen(),
+      },
+      
     );
   }
 }
