@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-class codeChef_profileScreen extends StatelessWidget {
+class codechefProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
