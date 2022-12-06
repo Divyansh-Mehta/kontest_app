@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Platform("Leetcode", "assets/images/leetcode.png"),
                     Platform("Codechef", "assets/images/codechef.png"),
                     Platform("Codeforces", "assets/images/codeforces.png"),
-                    Platform("spoj", ""),
+                    Platform("spoj", "assets/images/spoj.jpg"),
                   ],
                 ),
               )

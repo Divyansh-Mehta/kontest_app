@@ -44,6 +44,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.11.0"
+  provider: ^4.0.0
+  http: ^0.13.5
+  shared_preferences: ^2.0.15
 
 flutter_icons:
   image_path: "assets/icons/trophy.png"

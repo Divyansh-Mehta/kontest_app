@@ -6,7 +6,7 @@ class codechefProfileScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         // ignore: prefer_const_constructors
-        child:Text("helo"),
+        child: Text("helo"),
       ),
     );
   }

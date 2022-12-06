@@ -1,8 +1,11 @@
 import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+
 import "./profile_screen.dart";
 import "./coding_equipments_screen.dart";
 import "./home_screen.dart";
 import "./group_screen.dart";
+import "../providers/auth_provider.dart";
 
 // ignore: use_key_in_widget_constructors
 class TabsScreen extends StatefulWidget {
@@ -36,44 +39,64 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:(_selectedPageIndex == 0||_selectedPageIndex == 1||_selectedPageIndex == 2) ?AppBar(
-        title: const Text(
-          "Kontest",
-          style: TextStyle(
-            fontFamily: "PasseroOne",
-            fontSize: 30,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        elevation: 0,
-        leading: const ImageIcon(
-          AssetImage("assets/icons/trophy.png"),
-          color: Color.fromRGBO(242, 157, 56, 50),
-        ),
-        actions: <Widget>[
-          Transform.scale(
-            scale: 1.5,
-            child: IconButton(
-              onPressed: () => {},
-              icon: Image.asset("assets/icons/settings.png"),
+      appBar: (_selectedPageIndex == 0 ||
+              _selectedPageIndex == 1 ||
+              _selectedPageIndex == 2)
+          ? AppBar(
+              title: const Text(
+                "Kontest",
+                style: TextStyle(
+                  fontFamily: "PasseroOne",
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              elevation: 0,
+              leading: const ImageIcon(
+                AssetImage("assets/icons/trophy.png"),
+                color: Color.fromRGBO(242, 157, 56, 50),
+              ),
+              actions: <Widget>[
+                PopupMenuButton(
+                  icon: Transform.scale(
+                    scale: 1.5,
+                    child: Image.asset("assets/icons/settings.png"),
+                  ),
+                  itemBuilder: (_) => [
+                    PopupMenuItem(
+                      child: Text("Log Out"),
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed("/");
+
+                        // Navigator.of(context)
+                        //     .pushReplacementNamed(UserProductsScreen.routeName);
+                        Provider.of<Auth>(context, listen: false).logout();
+                      },
+                    ),
+                    PopupMenuItem(
+                      child: Text("Edit profile"),
+                      onTap: null,
+                    ),
+                  ],
+                ),
+              ],
+            )
+          : AppBar(
+              backgroundColor: const Color.fromRGBO(160, 153, 238, 1),
+              title: const Text(
+                "Kontest",
+                style: TextStyle(
+                  fontFamily: "PasseroOne",
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              elevation: 0,
+              leading: const ImageIcon(
+                AssetImage("assets/icons/trophy.png"),
+                color: Color.fromRGBO(242, 157, 56, 50),
+              ),
             ),
-          )
-        ],
-      ):AppBar(backgroundColor: const Color.fromRGBO(160, 153, 238, 1),
-      title: const Text(
-          "Kontest",
-          style: TextStyle(
-            fontFamily: "PasseroOne",
-            fontSize: 30,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        elevation: 0,
-        leading: const ImageIcon(
-          AssetImage("assets/icons/trophy.png"),
-          color: Color.fromRGBO(242, 157, 56, 50),
-        ),
-        ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         elevation: 0,
