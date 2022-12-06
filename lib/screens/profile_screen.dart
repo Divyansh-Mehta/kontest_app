@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 
 // ignore: use_key_in_widget_constructors
 class ProfileScreen extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,24 +29,17 @@ class ProfileScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 10.0),
-                child: Text(
-                  "Divyansh Mehta",
-                  style: TextStyle(
-                    fontSize: 32,
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                  ),
+                child: Text("Divyansh Mehta",
+                style: TextStyle(
+                  color: Color.fromRGBO(255, 255, 255, 1),
+                  fontFamily: "Actor",
+                  fontSize: 32,
                 ),
-              ),
-              Container(
-                child: Image.asset(
-                  "assets/icons/cat_profile.png",
-                  fit: BoxFit.fill,
                 ),
-                width: 100,
-                height: 100,
-              ),
-            ],
-          ),
+              ),   
+              Container(child: Image.asset("assets/icons/cat_profile.png",fit: BoxFit.fill,),width: 100,height: 100,)     
+            ],            
+            ),
         )
       ],
     );
