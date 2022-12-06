@@ -30,10 +30,13 @@ class Auth with ChangeNotifier {
     return _userId;
   }
 
+
   Future<void> _authenticate(
       String email, String password, String urlSegment) async {
-    final url =
-        Uri.parse("https://identitytoolkit.googleapis.com/v1/accounts:" + urlSegment + "?key=AIzaSyBfEfYIPKHJaa4s8zh1-P4k8XU82b1a2_g");
+    final url = Uri.parse(
+        "https://identitytoolkit.googleapis.com/v1/accounts:" +
+            urlSegment +
+            "?key=AIzaSyBfEfYIPKHJaa4s8zh1-P4k8XU82b1a2_g");
     try {
       final response = await http.post(
         url,
@@ -87,7 +90,8 @@ class Auth with ChangeNotifier {
     if (!prefs.containsKey("userData")) {
       return false;
     }
-    final extractedUserData = json.decode(prefs.getString("userData")) as Map<String, Object>;
+    final extractedUserData =
+        json.decode(prefs.getString("userData")) as Map<String, Object>;
     final expiryDate = DateTime.parse(extractedUserData["expiryDate"]);
 
     if (expiryDate.isBefore(DateTime.now())) {

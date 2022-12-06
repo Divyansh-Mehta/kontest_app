@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:kontest_app/screens/edit_profile_screen.dart';
 import "package:provider/provider.dart";
 
 import "screens/splash_screen.dart";
@@ -43,9 +44,7 @@ class MyApp extends StatelessWidget {
                                 ConnectionState.waiting
                             ? SplashScreen()
                             : AuthScreen()),
-            routes: {
-              '/profilescreen': (context) => ProfileScreen(),
-            },
+            routes: {EditProfileScreen.routeName: (_) => EditProfileScreen()},
           ),
         ));
   }

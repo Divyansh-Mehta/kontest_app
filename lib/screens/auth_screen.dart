@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import "package:provider/provider.dart";
 
+import "edit_profile_screen.dart";
 import "../providers/auth_provider.dart";
 import "../models/http_exception.dart";
 
@@ -154,6 +155,9 @@ class _AuthCardState extends State<AuthCard> {
     setState(() {
       _isLoading = false;
     });
+    // if (_authMode == AuthMode.Signup) {
+    //   Navigator.of(context).pushReplacementNamed(EditProfileScreen.routeName);
+    // }
   }
 
   void _switchAuthMode() {

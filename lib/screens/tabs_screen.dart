@@ -1,10 +1,11 @@
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 
-import "./profile_screen.dart";
-import "./coding_equipments_screen.dart";
-import "./home_screen.dart";
-import "./group_screen.dart";
+import "edit_profile_screen.dart";
+import "profile_screen.dart";
+import "coding_equipments_screen.dart";
+import "home_screen.dart";
+import "group_screen.dart";
 import "../providers/auth_provider.dart";
 
 // ignore: use_key_in_widget_constructors
@@ -64,6 +65,13 @@ class _TabsScreenState extends State<TabsScreen> {
                   ),
                   itemBuilder: (_) => [
                     PopupMenuItem(
+                      child: Text("Edit profile"),
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(EditProfileScreen.routeName);
+                      },
+                    ),
+                    PopupMenuItem(
                       child: Text("Log Out"),
                       onTap: () {
                         Navigator.of(context).pushReplacementNamed("/");
@@ -72,10 +80,6 @@ class _TabsScreenState extends State<TabsScreen> {
                         //     .pushReplacementNamed(UserProductsScreen.routeName);
                         Provider.of<Auth>(context, listen: false).logout();
                       },
-                    ),
-                    PopupMenuItem(
-                      child: Text("Edit profile"),
-                      onTap: null,
                     ),
                   ],
                 ),
