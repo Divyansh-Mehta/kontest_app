@@ -5,6 +5,6 @@ class AllPlatform extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return GridView(gridDelegate: );
+    return null;
   }
 }
